@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Boldstone - Premium Real Estate Investments</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter', sans-serif;background:#fff;color:#333;overflow-x:hidden;}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(15,137,114,0.1);border-bottom:1px solid rgba(15,137,114,0.08);}
+.nav-inner{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;}
+.nav .logo{font-size:1.45rem;font-weight:800;color:#0f8972;text-decoration:none;letter-spacing:-0.5px;}
+.nav a.back{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:700;color:#0f8972;text-decoration:none;padding:9px 18px;border:2px solid #0f8972;border-radius:10px;transition:all 0.2s;}
+.nav a.back:hover{background:#0f8972;color:#fff;box-shadow:0 4px 16px rgba(15,137,114,0.3);}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:url('https://photo.odoo.com/web/image/1145-3d84079f/coffee1.webp') center/cover no-repeat;transform:scale(1.08);transition:transform 8s ease-out;}
+.hero-bg.loaded{transform:scale(1);}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);}
+.hero-content{position:relative;z-index:2;color:#fff;padding:60px 24px;max-width:820px;margin:0 auto;}
+.hero-content .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:30px;padding:7px 20px;font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:24px;color:#a8ddd4;backdrop-filter:blur(8px);}
+.hero-content h1{font-size:3.4rem;font-weight:800;line-height:1.15;margin-bottom:20px;opacity:0;transform:translateY(30px);animation:fadeUp 0.9s 0.3s forwards;letter-spacing:-1px;}
+.hero-content h1 span{color:#5ecfc2;}
+.hero-content p{font-size:1.05rem;line-height:1.85;color:#c8ede8;margin-bottom:32px;opacity:0;transform:translateY(20px);animation:fadeUp 0.9s 0.6s forwards;max-width:620px;margin-left:auto;margin-right:auto;}
+.hero-btn{padding:15px 38px;font-size:0.97rem;border-radius:12px;font-weight:700;text-decoration:none;display:inline-block;transition:all 0.25s;background:linear-gradient(135deg,#0f8972,#1ab89a);color:#fff;border:none;opacity:0;animation:fadeUp 0.9s 0.9s forwards;box-shadow:0 8px 28px rgba(15,137,114,0.4);}
+.hero-btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(15,137,114,0.5);background:linear-gradient(135deg,#0a6b58,#0f8972);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+.fade-in{opacity:0;transform:translateY(36px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* ── SECTION SHARED ── */
+.section-label{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0f8972;background:linear-gradient(135deg,#d4f0ea,#e8f7f4);padding:6px 16px;border-radius:20px;margin-bottom:16px;border:1px solid #b2e4d8;}
+.section-heading{font-size:2.1rem;font-weight:800;color:#0a2e28;text-align:center;margin-bottom:12px;letter-spacing:-0.5px;}
+.section-sub{text-align:center;font-size:0.95rem;color:#6b7a76;line-height:1.75;max-width:540px;margin:0 auto 52px;}
+
+/* ── PURPOSE SECTION ── */
+.purpose-section{background:linear-gradient(160deg,#f0faf8 0%,#e6f5f2 50%,#fff 100%);padding:90px 20px;position:relative;overflow:hidden;}
+.purpose-section::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(15,137,114,0.06) 0%,transparent 70%);top:-150px;right:-150px;pointer-events:none;}
+.purpose-inner{max-width:1100px;margin:0 auto;text-align:center;}
+.purpose-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:0;}
+.purpose-card{background:#fff;padding:48px 40px;border-radius:20px;border:1.5px solid transparent;box-shadow:0 8px 32px rgba(15,137,114,0.08);text-align:center;transition:all 0.4s ease;position:relative;overflow:hidden;background-image:linear-gradient(#fff,#fff),linear-gradient(135deg,#d21f1f,#0f8972);background-origin:border-box;background-clip:padding-box,border-box;}
+.purpose-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0a6b58,#0f8972,#1ab89a,#0f8972);background-size:200%;animation:shimmer 3s linear infinite;}
+@keyframes shimmer{0%{background-position:0%;}100%{background-position:200%;}}
+.purpose-card::after{content:'';position:absolute;bottom:-60px;right:-60px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(15,137,114,0.05) 0%,transparent 70%);pointer-events:none;}
+.purpose-card:hover{transform:translateY(-10px);box-shadow:0 28px 56px rgba(15,137,114,0.16);border-color:#0f8972;}
+.purpose-card .icon-wrap{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#0f8972,#1ab89a);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 8px 24px rgba(15,137,114,0.3);}
+.purpose-card i{font-size:2rem;color:#fff;}
+.purpose-card h3{font-size:1.35rem;font-weight:800;color:#0a2e28;margin-bottom:14px;}
+.purpose-card p{font-size:0.93rem;color:#556b65;line-height:1.85;}
+
+/* ── WHAT WE DO ── */
+.services-section{background:#fff;padding:90px 20px;position:relative;}
+.services-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 10% 50%,rgba(15,137,114,0.04) 0%,transparent 60%);pointer-events:none;}
+.services-inner{max-width:1100px;margin:0 auto;text-align:center;position:relative;}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:0;}
+.service-card{background:#fff;padding:32px;border-radius:18px;border:1.5px solid transparent;box-shadow:0 4px 20px rgba(15,137,114,0.07);display:flex;flex-direction:column;gap:14px;transition:all 0.35s ease;text-align:left;position:relative;overflow:hidden;background-image:linear-gradient(#fff,#fff),linear-gradient(135deg,#d21f1f,#0f8972);background-origin:border-box;background-clip:padding-box,border-box;}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0f8972,#1ab89a);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease;}
+.service-card:hover::after{transform:scaleX(1);}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(15,137,114,0.14);border-color:#0f8972;}
+.service-card-header{display:flex;align-items:center;gap:14px;}
+.service-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#0f8972,#1ab89a);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(15,137,114,0.25);}
+.service-card i{font-size:1.3rem;color:#fff;}
+.service-card h3{font-size:1.05rem;font-weight:800;color:#0a2e28;margin:0;}
+.service-card p{font-size:0.88rem;color:#6b7a76;line-height:1.8;margin:0;}
+
+/* ── STATS BAR ── */
+.stats{background:linear-gradient(135deg,#062e26 0%,#0a4f44 40%,#0f8972 100%);color:#fff;padding:64px 20px;position:relative;overflow:hidden;}
+.stats::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.stats-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;}
+.stat{text-align:center;padding:32px 16px;border-radius:16px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);transition:all 0.3s;backdrop-filter:blur(4px);}
+.stat:hover{transform:translateY(-6px);background:rgba(255,255,255,0.13);box-shadow:0 16px 40px rgba(0,0,0,0.2);}
+.stat h3{font-size:2.8rem;font-weight:800;line-height:1;margin-bottom:8px;letter-spacing:-1.5px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.2);}
+.stat p{font-size:0.78rem;color:#a8ddd4;margin:0;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+
+/* ── TEAM SECTION ── */
+.team-section{background:linear-gradient(160deg,#fff 0%,#f0faf8 100%);padding:90px 20px;position:relative;overflow:hidden;}
+.team-section::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(15,137,114,0.05) 0%,transparent 70%);bottom:-200px;left:-200px;pointer-events:none;}
+.team-inner{max-width:1100px;margin:0 auto;text-align:center;position:relative;}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:0;}
+.team-card{background:#fff;border-radius:20px;padding:36px 24px;text-align:center;border:1.5px solid transparent;box-shadow:0 4px 20px rgba(15,137,114,0.07);transition:all 0.4s ease;cursor:pointer;position:relative;overflow:hidden;background-image:linear-gradient(#fff,#fff),linear-gradient(135deg,#d21f1f,#0f8972);background-origin:border-box;background-clip:padding-box,border-box;}
+.team-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0f8972,#1ab89a);opacity:0;transition:opacity 0.3s;}
+.team-card:hover::before{opacity:1;}
+.team-card:hover{transform:translateY(-10px);box-shadow:0 28px 56px rgba(15,137,114,0.16);border-color:#0f8972;}
+.team-card h4{font-size:1rem;margin-top:16px;margin-bottom:6px;font-weight:800;color:#0a2e28;}
+.team-card span{font-size:0.78rem;color:#0f8972;font-weight:700;background:linear-gradient(135deg,#d4f0ea,#e8f7f4);padding:4px 14px;border-radius:20px;display:inline-block;margin-bottom:14px;border:1px solid #b2e4d8;}
+.team-img{width:110px;height:110px;margin:0 auto 4px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#0f8972,#1ab89a);overflow:hidden;box-shadow:0 8px 24px rgba(15,137,114,0.25);}
+.team-img img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid white;}
+.read-bio{color:#0f8972;cursor:pointer;display:inline-block;margin-top:8px;font-weight:600;text-decoration:none;font-size:0.85rem;transition:all 0.2s;}
+.read-bio:hover{text-decoration:underline;transform:translateX(2px);}
+.linkedin-link{margin-top:10px;display:flex;justify-content:center;}
+.linkedin-link a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:0.82rem;color:#0077B5;font-weight:600;transition:all 0.2s;line-height:1;}
+.linkedin-link a:hover{text-decoration:underline;}
+.linkedin-link svg{width:14px;height:14px;display:block;flex-shrink:0;}
+.linkedin-link span{display:inline;background:none;padding:0;border:none;border-radius:0;margin:0;font-size:0.82rem;color:#0077B5;font-weight:600;}
+
+/* ── BIO CARD ── */
+.bio-card{position:absolute;inset:5px;background:rgba(248,253,251,0.97);backdrop-filter:blur(4px);padding:24px;border-radius:20px;opacity:0;pointer-events:none;text-align:left;z-index:10;border:1.5px solid rgba(212,237,232,0.8);display:flex;flex-direction:column;justify-content:flex-start;transition:opacity 0.3s ease, pointer-events 0.3s ease;overflow:auto;max-height:calc(100% - 10px);}
+.bio-card.show{opacity:1;pointer-events:auto;}
+.bio-card h3{font-size:1.2rem;color:#0d3d35;margin-bottom:14px;font-weight:800;text-align:center;}
+.bio-card p{font-size:0.95rem;color:#555;line-height:1.8;text-align:left;max-width:88%;margin:0 auto;}
+.close-bio{position:absolute;top:12px;right:16px;cursor:pointer;color:#0f8972;font-weight:bold;font-size:1.4rem;transition:all 0.2s;z-index:11;}
+.close-bio:hover{transform:scale(1.2);}
+
+/* ── CTA SECTION ── */
+.cta-section{max-width:1100px;margin:0 auto 90px;padding:0 20px;}
+.cta-inner{background:linear-gradient(135deg,#062e26 0%,#0a4f44 40%,#0f8972 80%,#1ab89a 100%);border-radius:24px;padding:72px 56px;text-align:center;color:#fff;position:relative;overflow:hidden;box-shadow:0 24px 64px rgba(10,79,68,0.35);}
+.cta-inner::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.04);top:-120px;right:-120px;}
+.cta-inner::after{content:'';position:absolute;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,0.04);bottom:-80px;left:-80px;}
+.cta-inner h2{font-size:2.2rem;font-weight:800;margin-bottom:16px;position:relative;letter-spacing:-0.5px;}
+.cta-inner p{font-size:0.97rem;color:#a8ddd4;margin-bottom:32px;line-height:1.85;max-width:520px;margin-left:auto;margin-right:auto;position:relative;}
+.cta-inner a{background:#fff;color:#0a4f44;padding:14px 32px;font-size:0.96rem;border-radius:12px;font-weight:800;text-decoration:none;display:inline-block;transition:all 0.25s;position:relative;box-shadow:0 4px 20px rgba(0,0,0,0.2);}
+.cta-inner a:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,0.3);background:#f0faf8;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .hero-content h1{font-size:2.6rem;}
+  .section-heading{font-size:1.75rem;}
+  .services-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+  .cta-inner{padding:52px 36px;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+}
+
+@media(max-width:860px){
+  .nav-inner{flex-wrap:wrap;justify-content:center;gap:12px;}
+  .hero{min-height:75vh;}
+  .hero-content h1{font-size:2rem;}
+  .section-heading{font-size:1.45rem;}
+  .purpose-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
+  .stat h3{font-size:2.2rem;}
+  .cta-inner{padding:36px 24px;}
+  .cta-inner h2{font-size:1.7rem;}
+}
+
+@media(max-width:540px){
+  .hero{min-height:60vh;}
+  .hero-content h1{font-size:1.65rem;}
+  .hero-content p{font-size:0.88rem;}
+  .section-heading{font-size:1.25rem;}
+  .purpose-grid{grid-template-columns:1fr;}
+  .purpose-card{padding:28px 24px;}
+  .service-card{padding:24px;}
+  .team-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .team-card{padding:20px 16px;}
+  .team-img{width:84px;height:84px;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .stat h3{font-size:1.9rem;}
+  .nav-inner{padding:12px 16px;}
+  .cta-inner{padding:28px 20px;}
+  .cta-inner h2{font-size:1.4rem;}
+  .bio-card{inset:0;max-height:calc(100vh - 30px);border-radius:12px;padding:18px;}
+  .bio-card h3{font-size:1.05rem;}
+  .bio-card p{font-size:0.92rem;text-align:left;max-width:100%;}
+}
+
+@media(max-width:400px){
+  .bio-card{padding:14px;}
+  .bio-card h3{font-size:1rem;}
+  .bio-card p{font-size:0.90rem;}
+  .team-card{padding:14px;}
+  .team-img{width:72px;height:72px;}
+  .team-card h4{font-size:0.88rem;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stat h3{font-size:1.6rem;}
+  .cta-inner{padding:20px 16px;}
+}
+
+@media(max-width:400px){
+  .hero-content h1{font-size:1.35rem;}
+  .section-heading{font-size:1.05rem;}
+  .team-card{padding:14px;}
+  .team-img{width:72px;height:72px;}
+  .team-card h4{font-size:0.88rem;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stat h3{font-size:1.6rem;}
+  .cta-inner{padding:20px 16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">Boldstone</a>
+    <a href="/" class="back"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="tag"><i class="fa-solid fa-leaf"></i> About Boldstone</div>
+    <h1>About Boldstone <span>Investments</span></h1>
+    <p>We acquire, develop, and professionally manage agricultural and real asset portfolios designed to deliver stable, predictable income and long-term capital appreciation.</p>
+    <p style="font-size:0.97rem;line-height:1.85;color:#c8ede8;max-width:620px;margin:0 auto 32px;">We combine disciplined asset selection, professional management, and structured investment models to minimize risk while maximizing sustainable returns.</p>
+    <a href="#" class="hero-btn">Learn More</a>
+  </div>
+</section>
+
+<!-- PURPOSE SECTION -->
+<section class="purpose-section fade-in">
+  <div class="purpose-inner">
+    <span class="section-label">Who We Are</span>
+    <h2 class="section-heading">Our Purpose</h2>
+    <div class="purpose-grid">
+      <div class="purpose-card">
+        <div class="icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Our Mission</h3>
+        <p>To structure resilient, income-generating land investments that deliver consistent returns while driving responsible economic development.</p>
+      </div>
+      <div class="purpose-card">
+        <div class="icon-wrap"><i class="fa-solid fa-earth-africa"></i></div>
+        <h3>Our Vision</h3>
+        <p>To be Uganda's premier alternative assets platform for land and agriculture investments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="services-section fade-in">
+  <div class="services-inner">
+    <span class="section-label">Our Services</span>
+    <h2 class="section-heading">What We Do</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-header">
+          <div class="service-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <h3>Land Acquisition</h3>
+        </div>
+        <p>Strategic sourcing and evaluation of land assets.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-header">
+          <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+          <h3>Asset Development</h3>
+        </div>
+        <p>Enhancing land value through structured planning.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-header">
+          <div class="service-icon"><i class="fa-solid fa-seedling"></i></div>
+          <h3>Farm Management</h3>
+        </div>
+        <p>Long-term crop and land productivity management.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-header">
+          <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
+          <h3>Community Investment</h3>
+        </div>
+        <p>Inclusive growth with investors and communities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats fade-in">
+  <div class="stats-grid">
+    <div class="stat"><h3><span class="counter" data-target="50">0</span>+</h3><p>Acres Managed</p></div>
+    <div class="stat"><h3><span class="counter" data-target="10">0</span>+</h3><p>Investors</p></div>
+    <div class="stat"><h3><span class="counter" data-target="15">0</span>+</h3><p>Projects</p></div>
+    <div class="stat"><h3><span class="counter" data-target="20">0</span>+</h3><p>Combined Years of Experience</p></div>
+  </div>
+</div>
+
+<!-- TEAM SECTION -->
+<section class="team-section fade-in">
+  <div class="team-inner">
+    <h2 class="section-heading">Founding Partners</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-img">
+          <img src="https://address-restaurant2.odoo.com/web/image/1571-51dfbae5/Moses%20Photo%20-%20up%20to%20date.webp" loading="lazy" alt="Moses Alicwamu"/>
+        </div>
+        <h4>Moses Alicwamu</h4>
+        <span>Partner</span>
+        <a href="#" class="read-bio" data-bio="bio-moses">Read Bio</a>
+        <div class="linkedin-link">
+          <a href="https://www.linkedin.com/in/moses-alicwamu/" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0077B5" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.7-1.7-1.7s.7-1.7 1.7-1.7 1.7.7 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.4c0-1.3-.5-2.2-1.7-2.2-.9 0-1.4.6-1.6 1.2-.1.2-.1.6-.1.9v5.5h-3s.1-8.9 0-10h3v1.4c.4-.6 1.2-1.4 2.9-1.4 2.1 0 3.6 1.3 3.6 4.1v5.9z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+        <div class="bio-card" id="bio-moses">
+          <span class="close-bio" onclick="closeAllBioCards()">✕</span>
+          <h3>Moses Alicwamu</h3>
+          <p>Is a founding partner of Boldstone with extensive experience in real estate investment, project development, and strategic property acquisition. He leads the firm's investment structuring and portfolio management.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img">
+          <img src="https://photo.odoo.com/web/image/1148-8abdf1ec/nel.webp" alt="Nelson Gumisiriza" loading="lazy"/>
+        </div>
+        <h4>Nelson Gumisiriza</h4>
+        <span>Partner</span>
+        <a href="#" class="read-bio" data-bio="bio-nelson">Read Bio</a>
+        <div class="bio-card" id="bio-nelson">
+          <span class="close-bio" onclick="closeAllBioCards()">✕</span>
+          <h3>Nelson Gumisiriza</h3>
+          <p>Specializes in property investment strategy and business development, helping investors access high-value real asset opportunities.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img">
+          <img src="https://boldstone.odoo.com/web/image/430-9aeec1e5/Screenshot%202025-12-16%20154812.webp" loading="lazy" alt="Jonathan Byaruhanga"/>
+        </div>
+        <h4>Jonathan Byaruhanga</h4>
+        <span>Partner</span>
+        <a href="#" class="read-bio" data-bio="bio-jonathan">Read Bio</a>
+        <div class="bio-card" id="bio-jonathan">
+          <span class="close-bio" onclick="closeAllBioCards()">✕</span>
+          <h3>Jonathan Byaruhanga</h3>
+          <p>Leads land acquisition strategy and comprehensive development planning for optimal asset performance.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img">
+          <img src="https://boldstone.odoo.com/web/image/429-43daa88a/Screenshot%202025-12-02%20095443.webp" loading="lazy" alt="Okwiri Expedito"/>
+        </div>
+        <h4>Okwiri Expedito</h4>
+        <span>Partner</span>
+        <a href="#" class="read-bio" data-bio="bio-okwiri">Read Bio</a>
+        <div class="bio-card" id="bio-okwiri">
+          <span class="close-bio" onclick="closeAllBioCards()">✕</span>
+          <h3>Okwiri Expedito</h3>
+          <p>Oversees operational planning and asset development execution ensuring consistent project delivery.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Scroll animation observer
+const observerOptions = {threshold: 0.1};
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Counter animation
+const counters = document.querySelectorAll('.counter');
+const speed = 2000;
+let isAnimating = false;
+let wasVisible = false;
+
+window.addEventListener('scroll', () => {
+  const statsBar = document.querySelector('.stats');
+  if(!statsBar) return;
+
+  const rect = statsBar.getBoundingClientRect();
+  const visible = rect.top < window.innerHeight && rect.bottom > 0;
+
+  if(visible && !wasVisible && !isAnimating){
+    wasVisible = true;
+    isAnimating = true;
+    counters.forEach(counter => {
+      counter.textContent = '0';
+      const target = parseInt(counter.dataset.target);
+      let current = 0;
+      const increment = target / (speed / 16);
+      const timer = setInterval(() => {
+        current += increment;
+        if(current >= target){
+          counter.textContent = target;
+          clearInterval(timer);
+        } else {
+          counter.textContent = Math.floor(current);
+        }
+      }, 16);
+    });
+    setTimeout(() => { isAnimating = false; }, speed + 200);
+  }
+
+  if(!visible) wasVisible = false;
+});
+
+// Bio toggle functionality
+function closeAllBioCards() {
+  document.querySelectorAll('.bio-card').forEach(card => card.classList.remove('show'));
+  document.querySelectorAll('.read-bio').forEach(btn => btn.textContent = 'Read Bio');
+}
+
+document.querySelectorAll('.read-bio').forEach(btn => {
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    const bioId = this.dataset.bio;
+    const bioCard = document.getElementById(bioId);
+    
+    if (bioCard.classList.contains('show')) {
+      closeAllBioCards();
+    } else {
+      // Hide all other bio cards first
+      closeAllBioCards();
+      // Show this bio card
+      bioCard.classList.add('show');
+      this.textContent = 'Hide Bio';
+    }
+  });
+});
+
+// Hero bg load animation
+window.addEventListener('load', () => {
+  const heroBg = document.querySelector('.hero-bg');
+  if(heroBg) heroBg.classList.add('loaded');
+});
+</script>
+</body>
+</html>

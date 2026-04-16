@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinix Models – Guma Smart</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#f5f7f6}
+header{position:fixed;top:0;width:100%;display:flex;align-items:center;gap:20px;padding:15px 40px;background:rgba(15,137,114,0.95);color:white;z-index:1000}
+header .logo{height:60px;max-width:220px;object-fit:contain}
+nav a{margin:0 10px;color:white;text-decoration:none;font-weight:500}
+.contact-btn{margin-left:auto;background:white;color:#0f8972;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+.brand-hero{
+margin-top:90px;height:70vh;
+background:linear-gradient(120deg,rgba(20,90,25,0.93) 45%,rgba(46,171,62,0.5) 100%),
+url('https://address-restaurant2.odoo.com/web/image/1663-aa0c2d9a/INFINIX.webp') center/cover no-repeat;
+display:flex;align-items:center;justify-content:space-between;
+padding:0 60px;color:white;overflow:hidden;position:relative;
+}
+.brand-hero::after{
+content:'';position:absolute;inset:0;
+background:radial-gradient(ellipse at 70% 50%,rgba(46,171,62,0.18) 0%,transparent 70%);
+}
+.hero-text-block{z-index:1;max-width:480px}
+.hero-text-block .tag{
+display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);
+border:1px solid rgba(255,255,255,0.25);border-radius:30px;
+padding:5px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+margin-bottom:14px;opacity:0;animation:slideUp 0.6s 0.2s ease forwards;
+}
+.hero-text-block h1{
+font-size:2.4rem;font-weight:900;line-height:1.1;
+opacity:0;animation:slideUp 0.7s 0.4s ease forwards;
+}
+.hero-text-block p{
+font-size:0.95rem;opacity:0;color:rgba(255,255,255,0.8);margin:12px 0 22px;
+animation:slideUp 0.7s 0.6s ease forwards;
+}
+.back-btn{
+display:inline-flex;align-items:center;gap:6px;background:white;color:#2EAB3E;
+padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:700;font-size:0.85rem;
+opacity:0;animation:slideUp 0.7s 0.8s ease forwards;
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+.hero-phone-wrap{z-index:1;display:flex;align-items:center;justify-content:center}
+.hero-phone-wrap img{
+height:55vh;max-width:260px;object-fit:contain;
+opacity:0;animation:phoneEntry 1s 0.3s ease forwards;
+}
+@keyframes slideUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes phoneEntry{
+0%{opacity:0;transform:translateY(60px) scale(0.92)}
+100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes phoneFloat{0%{transform:translateY(0)}100%{transform:translateY(-18px)}}
+.hero-phone-wrap img.floating{animation:phoneEntry 1s 0.3s ease forwards,phoneFloat 4s 1.3s ease-in-out infinite alternate}
+.section{padding:50px 40px}
+.section h2{font-size:1.4rem;font-weight:700;margin-bottom:24px;color:#222}
+.models{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px}
+.model-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform 0.25s,box-shadow 0.25s;position:relative;border:1.5px solid transparent;background-image:linear-gradient(#fff,#fff),linear-gradient(135deg,#d21f1f,#0f8972);background-origin:border-box;background-clip:padding-box,border-box}
+.model-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#2EAB3E}
+.model-card:hover{transform:translateY(-6px);box-shadow:0 14px 35px rgba(0,0,0,0.13)}
+.model-card .img-box{height:220px;background:#f8f8f8;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.model-card .img-box img{width:100%;height:100%;object-fit:contain;transition:transform 0.3s}
+.model-card:hover .img-box img{transform:scale(1.06)}
+.model-card .info{padding:16px}
+.model-card .info h3{font-size:1rem;font-weight:700;color:#222}
+.model-card .info .price{color:#0f8972;font-weight:700;font-size:1.05rem;margin:6px 0}
+.model-card .info .specs{font-size:0.8rem;color:#777;margin-bottom:12px}
+.model-card .info button{width:100%;background:#2EAB3E;color:white;border:none;padding:10px;border-radius:10px;font-weight:600;cursor:pointer;transition:opacity 0.2s}
+.model-card .info button:hover{opacity:0.85}
+footer{background:linear-gradient(135deg,#0a2a1e 0%,#0f3d2e 50%,#0a2a1e 100%);color:white;padding:60px 40px 0;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-brand img{height:55px;object-fit:contain;margin-bottom:16px}
+.footer-brand p{color:rgba(255,255,255,0.55);font-size:0.88rem;line-height:1.7;max-width:260px}
+.footer-brand .footer-socials{display:flex;gap:12px;margin-top:20px}
+.footer-socials a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;transition:background 0.2s,transform 0.2s}
+.footer-socials a:hover{background:rgba(15,137,114,0.4);transform:translateY(-3px)}
+.footer-col h4{font-size:0.9rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:white;margin-bottom:18px;position:relative;padding-bottom:10px}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:28px;height:2px;background:linear-gradient(90deg,#0f8972,#d21f1f);border-radius:2px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.88rem;transition:color 0.2s,padding-left 0.2s;display:inline-block}
+.footer-col ul li a:hover{color:#6ee8c8;padding-left:4px}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
+.footer-contact-item svg{flex-shrink:0;margin-top:2px}
+.footer-contact-item span{color:rgba(255,255,255,0.55);font-size:0.88rem;line-height:1.5}
+.footer-contact-item a{color:rgba(255,255,255,0.55);text-decoration:none}
+.footer-contact-item a:hover{color:#6ee8c8}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:20px 0;color:rgba(255,255,255,0.35);font-size:0.82rem}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:30px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+.whatsapp{position:fixed;bottom:28px;right:28px;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;text-decoration:none;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,0.45);transition:transform 0.3s,box-shadow 0.3s;z-index:999;animation:waBounce 2.5s ease-in-out infinite;}
+.whatsapp:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(37,211,102,0.6);animation:none;}
+@keyframes waBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+@media(max-width:768px){
+header{padding:12px 16px}
+header .logo{height:44px}
+nav{display:none}
+.contact-btn{padding:8px 12px;font-size:0.8rem}
+.brand-hero{height:auto;min-height:100vh;flex-direction:column;justify-content:center;padding:100px 20px 40px;gap:30px}
+.hero-text-block{max-width:100%}
+.hero-text-block h1{font-size:2.2rem}
+.hero-phone-wrap img{height:45vh;max-width:100%}
+.section{padding:40px 16px}
+.models{grid-template-columns:repeat(2,1fr);gap:16px}
+.model-card .img-box{height:160px}
+}
+
+@media(max-width:480px){
+.models{grid-template-columns:1fr}
+.hero-text-block h1{font-size:1.8rem}
+}
+.cart-fab{
+position:fixed;bottom:28px;left:28px;
+background:linear-gradient(135deg,#0f8972,#0a7060);
+color:white;border:none;border-radius:50px;
+padding:12px 20px;display:flex;align-items:center;gap:8px;
+font-size:0.88rem;font-weight:700;cursor:pointer;
+box-shadow:0 6px 24px rgba(15,137,114,0.4);
+transition:transform 0.2s,box-shadow 0.2s;
+z-index:998;
+}
+
+.cart-fab:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(15,137,114,0.5)}
+
+.cart-fab .cart-count{
+background:#d21f1f;color:white;
+width:20px;height:20px;border-radius:50%;
+font-size:0.72rem;font-weight:800;
+display:flex;align-items:center;justify-content:center;
+}
+
+.receipt-overlay{
+position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);
+z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;
+}
+
+.receipt-overlay.active{display:flex}
+
+.receipt-modal{
+background:white;border-radius:20px;width:100%;max-width:460px;
+box-shadow:0 24px 60px rgba(0,0,0,0.3);overflow:hidden;
+animation:receiptPop 0.3s ease;max-height:90vh;display:flex;flex-direction:column;
+}
+
+@keyframes receiptPop{
+0%{transform:scale(0.85);opacity:0}
+100%{transform:scale(1);opacity:1}
+}
+
+.receipt-header{
+background:linear-gradient(135deg,#0a7a62,#0f8972);
+padding:20px 24px;
+text-align:center;color:white;position:relative;flex-shrink:0;
+}
+
+.receipt-header .r-logo{
+height:40px;object-fit:contain;margin-bottom:8px;
+}
+
+.receipt-header h3{
+font-size:1rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;
+}
+
+.receipt-header p{
+font-size:0.78rem;opacity:0.75;margin-top:2px;
+}
+
+.receipt-close{
+position:absolute;top:14px;right:16px;
+background:rgba(255,255,255,0.2);border:none;color:white;
+width:28px;height:28px;border-radius:50%;font-size:1rem;
+cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+
+.receipt-body{
+padding:20px 24px;overflow-y:auto;flex:1;
+}
+
+.receipt-divider{
+border:none;border-top:2px dashed #e0e0e0;margin:14px 0;
+}
+
+.receipt-row{
+display:flex;justify-content:space-between;align-items:center;
+margin-bottom:8px;font-size:0.85rem;
+}
+
+.receipt-row .label{color:#777}
+.receipt-row .value{font-weight:700;color:#111}
+
+.cart-items-list{
+margin:8px 0;
+}
+
+.cart-item-row{
+display:flex;align-items:center;justify-content:space-between;
+padding:10px 12px;background:#f8f8f8;border-radius:10px;margin-bottom:8px;
+}
+
+.cart-item-row .ci-name{
+font-size:0.85rem;font-weight:600;color:#111;flex:1;
+}
+
+.cart-item-row .ci-qty{
+display:flex;align-items:center;gap:6px;
+}
+
+.cart-item-row .ci-qty button{
+width:24px;height:24px;border-radius:6px;border:1px solid #ddd;
+background:white;font-size:0.9rem;cursor:pointer;font-weight:700;
+display:flex;align-items:center;justify-content:center;
+}
+
+.cart-item-row .ci-qty span{
+font-size:0.85rem;font-weight:700;min-width:20px;text-align:center;
+}
+
+.cart-item-row .ci-price{
+font-size:0.85rem;font-weight:700;color:#0f8972;margin-left:12px;min-width:80px;text-align:right;
+}
+
+.cart-item-row .ci-remove{
+background:none;border:none;color:#ccc;cursor:pointer;font-size:1rem;margin-left:8px;
+transition:color 0.2s;
+}
+
+.cart-item-row .ci-remove:hover{color:#d21f1f}
+
+.receipt-total{
+display:flex;justify-content:space-between;align-items:center;
+background:linear-gradient(135deg,rgba(15,137,114,0.08),rgba(210,31,31,0.05));
+border-radius:12px;padding:14px 16px;margin-top:8px;
+}
+
+.receipt-total .label{font-weight:700;color:#111;font-size:0.95rem}
+.receipt-total .value{font-weight:900;color:#0f8972;font-size:1.2rem}
+
+.receipt-empty{
+text-align:center;padding:30px 0;color:#aaa;font-size:0.9rem;
+}
+
+.receipt-footer{
+padding:0 24px 20px;display:flex;flex-direction:column;gap:10px;flex-shrink:0;
+}
+
+.receipt-wa-btn{
+display:flex;align-items:center;justify-content:center;gap:10px;
+background:linear-gradient(135deg,#25D366,#1da851);
+color:white;border:none;width:100%;padding:14px;
+border-radius:12px;font-size:0.95rem;font-weight:700;
+cursor:pointer;text-decoration:none;
+box-shadow:0 6px 20px rgba(37,211,102,0.3);
+transition:transform 0.2s,box-shadow 0.2s;
+}
+
+.receipt-wa-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,0.4)}
+
+.receipt-cancel{
+background:none;border:1px solid #ddd;color:#777;
+width:100%;padding:11px;border-radius:12px;
+font-size:0.88rem;font-weight:600;cursor:pointer;
+transition:background 0.2s;
+}
+
+.receipt-email-input{
+width:100%;padding:11px 14px;border:1px solid #ddd;
+border-radius:10px;font-size:0.88rem;outline:none;
+transition:border-color 0.2s;
+margin-bottom:0;
+}
+
+.receipt-email-input:focus{border-color:#0f8972}
+
+.receipt-email-btn{
+display:flex;align-items:center;justify-content:center;gap:8px;
+background:linear-gradient(135deg,#0f8972,#0a7060);
+color:white;border:none;width:100%;padding:13px;
+border-radius:12px;font-size:0.9rem;font-weight:700;
+cursor:pointer;transition:opacity 0.2s;
+}
+
+.receipt-email-btn:hover{opacity:0.88}
+
+.receipt-email-btn:disabled{opacity:0.5;cursor:not-allowed}
+
+.receipt-or{
+text-align:center;color:#aaa;font-size:0.8rem;position:relative;
+}
+
+.receipt-or::before,.receipt-or::after{
+content:'';position:absolute;top:50%;width:42%;height:1px;background:#eee;
+}
+
+.receipt-or::before{left:0}
+.receipt-or::after{right:0}
+
+.receipt-email-input{
+width:100%;padding:11px 14px;border:1px solid #ddd;
+border-radius:10px;font-size:0.88rem;outline:none;
+transition:border-color 0.2s;
+margin-bottom:0;
+}
+
+.receipt-email-input:focus{border-color:#0f8972}
+
+.receipt-email-btn{
+display:flex;align-items:center;justify-content:center;gap:8px;
+background:linear-gradient(135deg,#0f8972,#0a7060);
+color:white;border:none;width:100%;padding:13px;
+border-radius:12px;font-size:0.9rem;font-weight:700;
+cursor:pointer;transition:opacity 0.2s;
+}
+
+.receipt-email-btn:hover{opacity:0.88}
+
+.receipt-email-btn:disabled{opacity:0.5;cursor:not-allowed}
+
+.receipt-or{
+text-align:center;color:#aaa;font-size:0.8rem;position:relative;
+}
+
+.receipt-or::before,.receipt-or::after{
+content:'';position:absolute;top:50%;width:42%;height:1px;background:#eee;
+}
+
+.receipt-or::before{left:0}
+.receipt-or::after{right:0}</style>
+</head>
+<body>
+
+<header>
+<img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" alt="Guma Smart Logo" class="logo">
+<nav>
+<a href="guma-smart.html">Home</a>
+<a href="iphone.html">iPhone</a>
+<a href="samsung.html">Samsung</a>
+<a href="infinix.html">Infinix</a>
+<a href="itel.html">Itel</a>
+</nav>
+<a href="#contact" class="contact-btn">Contact Us</a>
+</header>
+
+<div class="brand-hero">
+<div class="hero-text-block">
+<span class="tag">Infinix Mobile</span>
+<h1>Infinix.<br>Born To Stand Out.</h1>
+<p>Stylish Infinix smartphones — bold design, fast charging, and pro-level cameras.</p>
+<a href="guma-smart.html" class="back-btn">← Back to Home</a>
+</div>
+<div class="hero-phone-wrap">
+<img src="https://address-restaurant2.odoo.com/web/image/1663-aa0c2d9a/INFINIX.webp" class="floating" alt="Infinix">
+</div>
+</div>
+
+<section class="section">
+<h2>Available Models</h2>
+<div class="models">
+
+<div class="model-card">
+<div class="img-box"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400&q=80" alt="Zero 40"></div>
+<div class="info">
+<h3>Infinix Zero 40</h3>
+<div class="price">UGX 1,350,000</div>
+<div class="specs">6.78" · 108MP · 256GB · Dimensity 8020</div>
+<button>Order Now</button>
+</div>
+</div>
+
+<div class="model-card">
+<div class="img-box"><img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?w=400&q=80" alt="Note 40"></div>
+<div class="info">
+<h3>Infinix Note 40</h3>
+<div class="price">UGX 980,000</div>
+<div class="specs">6.78" · 108MP · 256GB · Helio G99 Ultimate</div>
+<button>Order Now</button>
+</div>
+</div>
+
+<div class="model-card">
+<div class="img-box"><img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&q=80" alt="Hot 40"></div>
+<div class="info">
+<h3>Infinix Hot 40</h3>
+<div class="price">UGX 620,000</div>
+<div class="specs">6.78" · 50MP · 128GB · Helio G88</div>
+<button>Order Now</button>
+</div>
+</div>
+
+<div class="model-card">
+<div class="img-box"><img src="https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&q=80" alt="Smart 8"></div>
+<div class="info">
+<h3>Infinix Smart 8</h3>
+<div class="price">UGX 380,000</div>
+<div class="specs">6.6" · 13MP · 64GB · Helio A22</div>
+<button>Order Now</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" alt="Guma Smart Logo">
+<p>Your trusted destination for premium smartphones, accessories, and agency banking in Fort Portal, Uganda.</p>
+<div class="footer-socials">
+<a href="https://wa.me/256706721334" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+<a href="tel:+256706721334"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="guma-smart.html">Home</a></li>
+<li><a href="iphone.html">iPhone</a></li>
+<li><a href="samsung.html">Samsung</a></li>
+<li><a href="tecno.html">Tecno</a></li>
+<li><a href="infinix.html">Infinix</a></li>
+<li><a href="itel.html">Itel</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Products</h4>
+<ul>
+<li><a href="#">Smartphones</a></li>
+<li><a href="#">Accessories</a></li>
+<li><a href="#">Chargers &amp; Cables</a></li>
+<li><a href="#">Audio</a></li>
+<li><a href="#">Cases &amp; Covers</a></li>
+<li><a href="#">Agency Banking</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f8972" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Fort Portal, Uganda</span></div>
+<div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f8972" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><a href="tel:+256706721334">+256 706 721334</a></span></div>
+<div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f8972" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span><a href="https://wa.me/256706721334" target="_blank">WhatsApp Us</a></span></div>
+<div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f8972" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon-Sun, 8am-9pm</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Guma Smart Phone Enterprise. All rights reserved.</p>
+<p>Fort Portal, Uganda</p>
+</div>
+</footer>
+<a href="https://wa.me/256706721334" class="whatsapp" target="_blank">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+<button class="cart-fab" onclick="openReceipt()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+  View Cart
+  <span class="cart-count" id="cartCount">0</span>
+</button>
+
+<div class="receipt-overlay" id="receiptOverlay">
+  <div class="receipt-modal">
+    <div class="receipt-header">
+      <img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" class="r-logo" alt="Logo">
+      <h3>Your Order</h3>
+      <p>Guma Smart Phone Enterprise</p>
+      <button class="receipt-close" onclick="closeReceipt()">?</button>
+    </div>
+    <div class="receipt-body">
+      <div class="receipt-row"><span class="label">Date</span><span class="value" id="r-date"></span></div>
+      <div class="receipt-row"><span class="label">Receipt No.</span><span class="value" id="r-ref"></span></div>
+      <hr class="receipt-divider">
+      <div class="cart-items-list" id="cartItemsList"></div>
+      <hr class="receipt-divider">
+      <div class="receipt-total">
+        <span class="label">Total Amount</span>
+        <span class="value" id="r-total">UGX 0</span>
+      </div>
+    </div>
+    <div class="receipt-footer">
+      <button class="receipt-email-btn" id="r-email-btn" onclick="sendReceiptEmail()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Send Receipt to Email
+      </button>
+      <div class="receipt-or">or</div>
+      <a class="receipt-wa-btn" id="r-wa-btn" href="#" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Confirm Order on WhatsApp
+      </a>
+      <button class="receipt-cancel" onclick="closeReceipt()">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init('jtf5FqMIsmP4JL3oF');
+let cart = [];
+function openReceipt(name, priceStr) {
+  if (name && priceStr) {
+    const num = parseInt(priceStr.replace(/[^0-9]/g, ''));
+    const existing = cart.find(i => i.name === name);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({name, price: num, qty: 1});
+    }
+    updateCartCount();
+    showCartNotification(name);
+  }
+  renderCart();
+  document.getElementById('receiptOverlay').classList.add('active');
+}
+function updateCartCount() {
+  const total = cart.reduce((sum, item) => sum + item.qty, 0);
+  const counter = document.getElementById('cartCount');
+  if (counter) counter.textContent = total;
+  const fab = document.querySelector('.cart-fab');
+  if (fab) fab.style.display = total > 0 ? 'flex' : 'none';
+}
+function showCartNotification(name) {
+  const note = document.createElement('div');
+  note.style.cssText = 'position:fixed;bottom:90px;left:28px;background:#0f8972;color:white;padding:10px 16px;border-radius:10px;font-size:0.82rem;font-weight:600;z-index:9998;animation:fadeInUp 0.3s ease;box-shadow:0 4px 16px rgba(0,0,0,0.2)';
+  note.textContent = '✓ ' + name + ' added to cart';
+  document.body.appendChild(note);
+  setTimeout(() => note.remove(), 2000);
+}
+function changeQty(name, delta) {
+  const item = cart.find(i => i.name === name);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) cart = cart.filter(i => i.name !== name);
+  updateCartCount();
+  renderCart();
+}
+function removeItem(name) {
+  cart = cart.filter(i => i.name !== name);
+  updateCartCount();
+  renderCart();
+}
+function renderCart() {
+  const now = new Date();
+  document.getElementById('r-date').textContent = now.toLocaleDateString('en-UG', { day:'2-digit', month:'short', year:'numeric' });
+  document.getElementById('r-ref').textContent = 'GS-' + now.getFullYear() + '-' + String(Math.floor(Math.random() * 90000) + 10000);
+  const list = document.getElementById('cartItemsList');
+  if (!list) return;
+  if (cart.length === 0) {
+    list.innerHTML = '<div class="receipt-empty">Your cart is empty.<br>Add items using "Order Now".</div>';
+    document.getElementById('r-total').textContent = 'UGX 0';
+    document.getElementById('r-wa-btn').href = '#';
+    return;
+  }
+  list.innerHTML = cart.map(item => `
+    <div class="cart-item-row">
+      <span class="ci-name">${item.name}</span>
+      <div class="ci-qty">
+        <button onclick="changeQty('${item.name}', -1)">-</button>
+        <span>${item.qty}</span>
+        <button onclick="changeQty('${item.name}', 1)">+</button>
+      </div>
+      <span class="ci-price">UGX ${(item.price * item.qty).toLocaleString()}</span>
+      <button class="ci-remove" onclick="removeItem('${item.name}')">?</button>
+    </div>
+  `).join('');
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  document.getElementById('r-total').textContent = 'UGX ' + total.toLocaleString();
+  const date = document.getElementById('r-date').textContent;
+  const ref = document.getElementById('r-ref').textContent;
+  const itemLines = cart.map(i => `  - ${i.name} x${i.qty} = UGX ${(i.price*i.qty).toLocaleString()}`).join('\n');
+  const msg = encodeURIComponent(
+    '*ORDER RECEIPT*\n' +
+    '\n' +
+    '*Guma Smart Phone Enterprise*\n' +
+    'Fort Portal, Uganda\n' +
+    '\n' +
+    ' Date: ' + date + '\n' +
+    ' Ref: ' + ref + '\n' +
+    '\n' +
+    'Items:\n' + itemLines + '\n' +
+    '\n' +
+    ' *Total: UGX ' + total.toLocaleString() + '*\n\n' +
+    'Please confirm this order. Thank you!'
+  );
+  document.getElementById('r-wa-btn').href = 'https://wa.me/256706721334?text=' + msg;
+}
+function sendReceiptEmail() {
+  if (cart.length === 0) { alert('Your cart is empty.'); return; }
+  const btn = document.getElementById('r-email-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  const date = document.getElementById('r-date').textContent;
+  const ref = document.getElementById('r-ref').textContent;
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const itemsHtml = cart.map(i => `
+    <tr>
+      <td style="padding:10px 12px;border-bottom:1px solid #f0f0f0;font-size:14px;color:#333">${i.name}</td>
+      <td style="padding:10px 12px;border-bottom:1px solid #f0f0f0;font-size:14px;text-align:center;color:#333">${i.qty}</td>
+      <td style="padding:10px 12px;border-bottom:1px solid #f0f0f0;font-size:14px;text-align:right;color:#0f8972;font-weight:700">UGX ${(i.price).toLocaleString()}</td>
+      <td style="padding:10px 12px;border-bottom:1px solid #f0f0f0;font-size:14px;text-align:right;color:#0f8972;font-weight:700">UGX ${(i.price*i.qty).toLocaleString()}</td>
+    </tr>
+  `).join('');
+  const receiptHtml = `
+  <div style="font-family:'Inter',Arial,sans-serif;max-width:600px;margin:0 auto;background:#f5f7f6;padding:20px">
+    <div style="background:linear-gradient(135deg,#0a7a62,#0f8972);border-radius:16px 16px 0 0;padding:32px;text-align:center">
+      <img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" style="height:60px;object-fit:contain;margin-bottom:12px" alt="Guma Smart">
+      <h1 style="color:white;font-size:22px;font-weight:800;margin:0">Order Receipt</h1>
+      <p style="color:rgba(255,255,255,0.75);font-size:13px;margin:6px 0 0">Guma Smart Phone Enterprise &bull; Fort Portal, Uganda</p>
+    </div>
+    <div style="background:white;padding:28px;border-left:1px solid #e8e8e8;border-right:1px solid #e8e8e8">
+      <table style="width:100%;margin-bottom:20px">
+        <tr>
+          <td style="font-size:13px;color:#777">Date</td>
+          <td style="font-size:13px;font-weight:700;color:#111;text-align:right">${date}</td>
+        </tr>
+        <tr>
+          <td style="font-size:13px;color:#777;padding-top:6px">Receipt No.</td>
+          <td style="font-size:13px;font-weight:700;color:#111;text-align:right;padding-top:6px">${ref}</td>
+        </tr>
+      </table>
+      <div style="border-top:2px dashed #e0e0e0;margin:16px 0"></div>
+      <table style="width:100%;border-collapse:collapse">
+        <thead>
+          <tr style="background:#f8f8f8">
+            <th style="padding:10px 12px;font-size:12px;color:#777;text-align:left;font-weight:600;text-transform:uppercase">Item</th>
+            <th style="padding:10px 12px;font-size:12px;color:#777;text-align:center;font-weight:600;text-transform:uppercase">Qty</th>
+            <th style="padding:10px 12px;font-size:12px;color:#777;text-align:right;font-weight:600;text-transform:uppercase">Unit Price</th>
+            <th style="padding:10px 12px;font-size:12px;color:#777;text-align:right;font-weight:600;text-transform:uppercase">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>${itemsHtml}</tbody>
+      </table>
+      <div style="border-top:2px dashed #e0e0e0;margin:16px 0"></div>
+      <div style="background:linear-gradient(135deg,rgba(15,137,114,0.08),rgba(210,31,31,0.05));border-radius:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:16px;font-weight:800;color:#111">Total Amount</span>
+        <span style="font-size:22px;font-weight:900;color:#0f8972">UGX ${total.toLocaleString()}</span>
+      </div>
+      <p style="text-align:center;color:#aaa;font-size:12px;margin-top:20px">Thank you for choosing Guma Smart Phone Enterprise!</p>
+    </div>
+    <div style="background:linear-gradient(135deg,#0a7a62,#0f8972);border-radius:0 0 16px 16px;padding:20px;text-align:center">
+      <p style="color:rgba(255,255,255,0.7);font-size:12px;margin:0">+256 706 721334 &bull; Fort Portal, Uganda &bull; Mon-Sat 8am-8pm</p>
+    </div>
+  </div>`;
+  emailjs.send('service_98q9vwe', 'template_uw5wtda', {
+    to_email: 'tumwesigehabib@gmail.com',
+    from_name: 'Guma Smart Phone Enterprise',
+    reply_to: 'tumwesigehabib@gmail.com',
+    receipt_html: receiptHtml,
+    ref: ref,
+    date: date,
+    total: 'UGX ' + total.toLocaleString()
+  }).then(() => {
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Receipt Sent!';
+    setTimeout(() => { btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Send Receipt to Email'; }, 3000);
+  }).catch(() => {
+    btn.disabled = false;
+    btn.textContent = 'Failed. Try again.';
+    setTimeout(() => { btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Send Receipt to Email'; }, 3000);
+  });
+}
+function closeReceipt() {
+  document.getElementById('receiptOverlay').classList.remove('active');
+}
+function attachModelButtons() {
+  document.querySelectorAll('.model-card button').forEach(function(button) {
+    if (button.dataset.cartAttached === 'true') return;
+    button.addEventListener('click', function() {
+      const card = button.closest('.model-card');
+      if (!card) return;
+      const nameEl = card.querySelector('h3');
+      const priceEl = card.querySelector('.price');
+      if (nameEl && priceEl) {
+        openReceipt(nameEl.textContent.trim(), priceEl.textContent.trim());
+      }
+    });
+    button.dataset.cartAttached = 'true';
+  });
+}
+function initCart() {
+  attachModelButtons();
+  const overlay = document.getElementById('receiptOverlay');
+  if (overlay) {
+    overlay.addEventListener('click', function(event) {
+      if (event.target === this) closeReceipt();
+    });
+  }
+  updateCartCount();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCart);
+} else {
+  initCart();
+}
+</script>
+</body>
+</html>
+
+
+
