@@ -1666,58 +1666,6 @@ document.getElementById('receiptOverlay').addEventListener('click', function(e){
 });
 
 // Mobile menu toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('header nav');
-if (menuToggle && navMenu) {
-  menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
-}
-
-// Hide cart FAB initially
-document.querySelector('.cart-fab').style.display = 'none';
-const track = document.querySelector('.bank-track');
-const original = track.innerHTML;
-track.innerHTML = original + original;
-
-let pos = 0;
-let paused = false;
-const speed = 1.5;
-
-track.addEventListener('mouseenter', () => paused = true);
-track.addEventListener('mouseleave', () => paused = false);
-
-function slide() {
-  if (!paused) {
-    pos -= speed;
-    const half = track.scrollWidth / 2;
-    if (Math.abs(pos) >= half) pos = 0;
-    track.style.transform = 'translateX(' + pos + 'px)';
-  }
-  requestAnimationFrame(slide);
-}
-requestAnimationFrame(slide);
-
-// Featured slider
-const fTrack = document.querySelector('.featured-track');
-fTrack.innerHTML = fTrack.innerHTML + fTrack.innerHTML;
-
-let fPos = 0;
-let fPaused = false;
-
-fTrack.addEventListener('mouseenter', () => fPaused = true);
-fTrack.addEventListener('mouseleave', () => fPaused = false);
-
-function fSlide() {
-  if (!fPaused) {
-    fPos -= 1.5;
-    const half = fTrack.scrollWidth / 2;
-    if (Math.abs(fPos) >= half) fPos = 0;
-    fTrack.style.transform = 'translateX(' + fPos + 'px)';
-  }
-  requestAnimationFrame(fSlide);
-}
-requestAnimationFrame(fSlide);
-
-// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav');
