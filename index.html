@@ -290,7 +290,13 @@ color:#777;font-size:0.95rem;
 .featured-slider{overflow:hidden;position:relative;}
 
 .featured-track{
-display:flex;gap:24px;width:max-content;
+display:flex;
+gap:24px;
+width:max-content;
+}
+
+.featured-track:hover{
+animation-play-state:paused;
 }
 
 .featured-card::before{
@@ -1313,6 +1319,30 @@ grid-template-columns:1fr;
 <div class="f-info"><div class="f-brand">Itel</div><div class="f-name">Itel P55</div><div class="f-price">UGX 580,000</div><button class="f-btn" onclick="openReceipt('Itel P55','UGX 580,000')">Order Now</button></div>
 </div>
 
+<div class="featured-card">
+<span class="badge">New</span>
+<div class="f-img"><img src="https://address-restaurant2.odoo.com/web/image/1653-5cf5c540/iphone-17-pro-17-pro-max-hero.webp" alt="iPhone 15 Pro"></div>
+<div class="f-info"><div class="f-brand">Apple</div><div class="f-name">iPhone 15 Pro</div><div class="f-price">UGX 3,200,000</div><button class="f-btn" onclick="openReceipt('iPhone 15 Pro','UGX 3,200,000')">Order Now</button></div>
+</div>
+
+<div class="featured-card">
+<span class="badge">New</span>
+<div class="f-img"><img src="https://address-restaurant2.odoo.com/web/image/1656-e82efd0f/Samsung-Galaxy-S26-Plus-Sky-Blue-social_1x1.webp" alt="Galaxy S25"></div>
+<div class="f-info"><div class="f-brand">Samsung</div><div class="f-name">Galaxy S25</div><div class="f-price">UGX 3,100,000</div><button class="f-btn" onclick="openReceipt('Galaxy S25','UGX 3,100,000')">Order Now</button></div>
+</div>
+
+<div class="featured-card">
+<span class="badge">Hot</span>
+<div class="f-img"><img src="https://address-restaurant2.odoo.com/web/image/1663-aa0c2d9a/INFINIX.webp" alt="Infinix Zero 40"></div>
+<div class="f-info"><div class="f-brand">Infinix</div><div class="f-name">Infinix Zero 40</div><div class="f-price">UGX 1,350,000</div><button class="f-btn" onclick="openReceipt('Infinix Zero 40','UGX 1,350,000')">Order Now</button></div>
+</div>
+
+<div class="featured-card">
+<span class="badge">Hot</span>
+<div class="f-img"><img src="https://address-restaurant2.odoo.com/web/image/1662-a2966bb3/techno.webp" alt="Tecno Camon 30"></div>
+<div class="f-info"><div class="f-brand">Tecno</div><div class="f-name">Camon 30</div><div class="f-price">UGX 1,100,000</div><button class="f-btn" onclick="openReceipt('Tecno Camon 30','UGX 1,100,000')">Order Now</button></div>
+</div>
+
 </div>
 </div>
 </section>
@@ -1777,6 +1807,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   setupCarousel('.brands-track');
+  setupCarousel('.featured-track');
   setupCarousel('.bank-track');
   
   const menuToggle = document.querySelector('.menu-toggle');
