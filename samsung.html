@@ -9,6 +9,7 @@
 body{background:#f5f7f6}
 header{position:fixed;top:0;width:100%;display:flex;align-items:center;gap:20px;padding:15px 40px;background:rgba(15,137,114,0.95);color:white;z-index:1000}
 header .logo{height:60px;max-width:220px;object-fit:contain}
+.menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,0.35);color:white;font-size:1.6rem;width:44px;height:44px;border-radius:12px;cursor:pointer;align-items:center;justify-content:center;}
 nav a{margin:0 10px;color:white;text-decoration:none;font-weight:500}
 .contact-btn{margin-left:auto;background:white;color:#0f8972;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700}
 .brand-hero{
@@ -96,9 +97,10 @@ footer{background:linear-gradient(135deg,#0a2a1e 0%,#0f3d2e 50%,#0a2a1e 100%);co
 @keyframes waBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
 @media(max-width:768px){
-header{padding:12px 16px}
-header .logo{height:44px}
-nav{display:none}
+header{position:fixed;top:0;width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;background:rgba(15,137,114,0.95);z-index:1001;}
+header .logo{height:44px;flex-shrink:0}
+.menu-toggle{display:flex;margin-left:auto;transition:transform 0.3s ease;order:unset}
+.menu-toggle.active{transform:rotate(90deg)}
 .contact-btn{padding:8px 12px;font-size:0.8rem}
 .brand-hero{height:auto;min-height:100vh;flex-direction:column;justify-content:center;padding:100px 20px 40px;gap:30px}
 .hero-text-block{max-width:100%}
