@@ -952,7 +952,7 @@ header .logo{height:44px;flex-shrink:0}
 
 nav{
 position:fixed;top:0;right:0;width:50%;height:100vh;
-background:linear-gradient(180deg,rgba(15,137,114,0.98) 0%,rgba(10,112,96,0.98) 100%);
+background: white;
 display:flex;flex-direction:column;gap:0;
 z-index:1000;
 padding-top:70px;
@@ -965,12 +965,34 @@ nav.active{
 transform:translateX(0);
 }
 
+.menu-close{
+position:absolute;
+top:16px;
+right:16px;
+background:none;
+border:none;
+color:#0f8972;
+font-size:2.2rem;
+cursor:pointer;
+z-index:1001;
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:transform 0.2s;
+}
+
+.menu-close:hover{
+transform:scale(1.15);
+}
+
 nav a{
 margin:0;
-color:white;
+color:#0f8972;
 display:block;
 padding:20px 24px;
-border-bottom:1px solid rgba(255,255,255,0.1);
+border-bottom:1px solid rgba(15,137,114,0.1);
 font-size:1.1rem;
 font-weight:600;
 text-decoration:none;
@@ -978,14 +1000,14 @@ transition:background 0.2s,padding-left 0.2s;
 }
 
 nav a:hover{
-background:rgba(255,255,255,0.1);
+background:rgba(15,137,114,0.1);
 padding-left:32px;
 }
 
 nav a:first-child{padding-top:24px}
 
 .contact-btn{
-display:none;background:white;color:#0f8972;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.12);margin:0;border-bottom:1px solid rgba(255,255,255,0.1);
+display:none;background:#0f8972;color:white;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(15,137,114,0.2);margin:0;border-bottom:none;
 font-size:1.1rem;transition:background 0.2s,padding-left 0.2s;
 }
 
@@ -994,7 +1016,7 @@ display:block;margin-top:auto;margin-bottom:20px;border-bottom:none;
 }
 
 nav .contact-btn:hover{
-background:#f0f0f0;
+background:#0a7060;
 padding-left:32px;
 }
 
@@ -1099,11 +1121,13 @@ grid-template-columns:1fr;
 <header>
 <img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" alt="Guma Smart Logo" class="logo">
 <nav>
-<a href="guma-smart.html">Home</a>
+<button class="menu-close" onclick="document.querySelector('.menu-toggle').classList.remove('active'); document.querySelector('nav').classList.remove('active');">×</button>
+<a href="index.html">Home</a>
 <a href="iphone.html">iPhone</a>
 <a href="samsung.html">Samsung</a>
 <a href="infinix.html">Infinix</a>
 <a href="itel.html">Itel</a>
+<a href="tecno.html">Tecno</a>
 <a href="#contact" class="contact-btn">Contact Us</a>
 </nav>
 <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
@@ -1683,6 +1707,14 @@ document.addEventListener('DOMContentLoaded', function() {
       nav.classList.remove('active');
     });
   });
+
+  const menuClose = document.querySelector('.menu-close');
+  if (menuClose) {
+    menuClose.addEventListener('click', function() {
+      menuToggle.classList.remove('active');
+      nav.classList.remove('active');
+    });
+  }
 
   // Close menu when clicking outside (optional)
   document.addEventListener('click', function(e) {
