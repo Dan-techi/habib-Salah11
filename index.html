@@ -73,9 +73,25 @@ background:#d21f1f;color:white;padding:12px 25px;border-radius:8px;text-decorati
 h2{margin-bottom:20px}
 
 .brands{
-display:grid;
-grid-template-columns:repeat(5,1fr);
+display:flex;
 gap:24px;
+overflow:hidden;
+position:relative;
+}
+
+.brands-track{
+display:flex;
+gap:24px;
+width:max-content;
+}
+
+.brands-track:hover{
+animation-play-state:paused;
+}
+
+.brand-card{
+min-width:calc(20% - 19.2px);
+flex-shrink:0;
 }
 
 .brand-card{
@@ -233,9 +249,14 @@ letter-spacing:0.04em;text-transform:uppercase;
 text-align:center;line-height:1.2;
 }
 
-@keyframes bankScroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
+.bank-track{
+display:flex;
+gap:24px;
+width:max-content;
+}
+
+.bank-track:hover{
+animation-play-state:paused;
 }
 
 /* Featured Phones */
@@ -1186,6 +1207,7 @@ grid-template-columns:1fr;
 <section class="section">
 <h2>Explore Phone Brands</h2>
 <div class="brands">
+<div class="brands-track">
 
 <div class="brand-card" style="--brand-color:#555555">
 <h3 style="color:#555555">iPhone</h3>
@@ -1217,6 +1239,37 @@ grid-template-columns:1fr;
 <button onclick="location.href='itel.html'">View Phones</button>
 </div>
 
+<div class="brand-card" style="--brand-color:#555555">
+<h3 style="color:#555555">iPhone</h3>
+<div class="img-wrap"><img src="https://address-restaurant2.odoo.com/web/image/1653-5cf5c540/iphone-17-pro-17-pro-max-hero.webp"></div>
+<button onclick="location.href='iphone.html'">View Phones</button>
+</div>
+
+<div class="brand-card" style="--brand-color:#1428A0">
+<h3 style="color:#1428A0">Samsung</h3>
+<div class="img-wrap"><img src="https://address-restaurant2.odoo.com/web/image/1656-e82efd0f/Samsung-Galaxy-S26-Plus-Sky-Blue-social_1x1.webp"></div>
+<button onclick="location.href='samsung.html'">View Phones</button>
+</div>
+
+<div class="brand-card" style="--brand-color:#0071CE">
+<h3 style="color:#0071CE">Tecno</h3>
+<div class="img-wrap"><img src="https://address-restaurant2.odoo.com/web/image/1662-a2966bb3/techno.webp"></div>
+<button onclick="location.href='tecno.html'">View Phones</button>
+</div>
+
+<div class="brand-card" style="--brand-color:#2EAB3E">
+<h3 style="color:#2EAB3E">Infinix</h3>
+<div class="img-wrap"><img src="https://address-restaurant2.odoo.com/web/image/1663-aa0c2d9a/INFINIX.webp"></div>
+<button onclick="location.href='infinix.html'">View Phones</button>
+</div>
+
+<div class="brand-card" style="--brand-color:#FF073C">
+<h3 style="color:#FF073C">Itel</h3>
+<div class="img-wrap"><img src="https://address-restaurant2.odoo.com/web/image/1664-c2bb9f13/ITEL-A70-1.webp"></div>
+<button onclick="location.href='itel.html'">View Phones</button>
+</div>
+
+</div>
 </div>
 </section>
 
@@ -1470,7 +1523,7 @@ View Cart
 <img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" class="r-logo" alt="Logo">
 <h3>Your Order</h3>
 <p>Habib Smart Phone Enterprise</p>
-<button class="receipt-close" onclick="closeReceipt()">?</button>
+<button class="receipt-close" onclick="closeReceipt()">×</button>
 </div>
 <div class="receipt-body">
 <div class="receipt-row"><span class="label">Date</span><span class="value" id="r-date"></span></div>
@@ -1571,7 +1624,7 @@ function renderCart() {
         <button onclick="changeQty('${item.name}',1)">+</button>
       </div>
       <span class="ci-price">UGX ${(item.price * item.qty).toLocaleString()}</span>
-      <button class="ci-remove" onclick="removeItem('${item.name}')">?</button>
+      <button class="ci-remove" onclick="removeItem('${item.name}')">×</button>
     </div>
   `).join('');
 
@@ -1695,8 +1748,37 @@ document.getElementById('receiptOverlay').addEventListener('click', function(e){
   if(e.target === this) closeReceipt();
 });
 
-// Mobile menu toggle
+// Infinite carousel scroll
 document.addEventListener('DOMContentLoaded', function() {
+  function setupCarousel(trackSelector) {
+    const track = document.querySelector(trackSelector);
+    if (!track) return;
+    
+    let position = 0;
+    let speed = 1;
+    let isHovered = false;
+    
+    track.addEventListener('mouseenter', () => { isHovered = true; });
+    track.addEventListener('mouseleave', () => { isHovered = false; });
+    
+    function animate() {
+      if (!isHovered) {
+        position -= speed;
+        const trackWidth = track.scrollWidth / 2;
+        if (position <= -trackWidth) {
+          position = 0;
+        }
+        track.style.transform = `translateX(${position}px)`;
+      }
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
+  }
+  
+  setupCarousel('.brands-track');
+  setupCarousel('.bank-track');
+  
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav');
   const navLinks = document.querySelectorAll('nav a');
@@ -1706,7 +1788,6 @@ document.addEventListener('DOMContentLoaded', function() {
     nav.classList.toggle('active');
   });
 
-  // Close menu when a link is clicked
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
       menuToggle.classList.remove('active');
@@ -1722,7 +1803,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Close menu when clicking outside (optional)
   document.addEventListener('click', function(e) {
     if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
       menuToggle.classList.remove('active');

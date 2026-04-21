@@ -592,7 +592,7 @@ padding-left:32px;
       <img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" class="r-logo" alt="Logo">
       <h3>Your Order</h3>
       <p>Guma Smart Phone Enterprise</p>
-      <button class="receipt-close" onclick="closeReceipt()">?</button>
+      <button class="receipt-close" onclick="closeReceipt()">×</button>
     </div>
     <div class="receipt-body">
       <div class="receipt-row"><span class="label">Date</span><span class="value" id="r-date"></span></div>
@@ -718,7 +718,7 @@ function renderCart() {
         <button onclick="changeQty('${item.name}', 1)">+</button>
       </div>
       <span class="ci-price">UGX ${(item.price * item.qty).toLocaleString()}</span>
-      <button class="ci-remove" onclick="removeItem('${item.name}')">?</button>
+      <button class="ci-remove" onclick="removeItem('${item.name}')">×</button>
     </div>
   `).join('');
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
