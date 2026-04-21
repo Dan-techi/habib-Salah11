@@ -21,6 +21,10 @@ nav{display:flex;gap:20px;}
 
 .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,0.35);color:white;font-size:1.6rem;width:44px;height:44px;border-radius:12px;cursor:pointer;align-items:center;justify-content:center;}
 
+@media(min-width:769px){
+.menu-toggle{display:none !important}
+}
+
 .contact-btn{margin-left:auto;background:white;color:#0f8972;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.12)}
 
 nav a{margin:0 10px;color:white;text-decoration:none;font-weight:500}
@@ -939,6 +943,8 @@ animation:none;
 50%{transform:translateY(-8px)}
 }
 
+.menu-close { display: none; }
+
 @media(max-width:768px){
 
 header{
@@ -949,6 +955,10 @@ header .logo{height:44px;flex-shrink:0}
 .menu-toggle{display:flex;margin-left:auto;transition:transform 0.3s ease;order:unset}
 
 .menu-toggle.active{transform:rotate(90deg)}
+
+.menu-close {
+display: none;
+}
 
 .menu-close {
 position: absolute;
@@ -1150,7 +1160,6 @@ grid-template-columns:1fr;
 <a href="infinix.html">Infinix</a>
 <a href="itel.html">Itel</a>
 <a href="tecno.html">Tecno</a>
-<a href="#contact" class="contact-btn">Contact Us</a>
 </nav>
 <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
 <a href="#contact" class="contact-btn">Contact Us</a>
@@ -1162,8 +1171,8 @@ grid-template-columns:1fr;
 <div class="hero-text">
 <p class="hero-subtitle">Welcome To</p>
 <h1>Habib Smart Phone Enterprise</h1>
-<h2>Find the perfect smartphone, sleek accessories, and trusted agency banking today</h2>
-<p>See the latest Guma phone premium design, fast service, and secure payment options all in one place.</p>
+<h2>Find the perfect smartphone and sleek accessories in Kampala today</h2>
+<p>See the latest Habib phone premium design, fast service, and secure payment options all in one place.</p>
 <a href="#" class="btn">Explore Our Products</a>
 </div>
 
@@ -1297,58 +1306,34 @@ grid-template-columns:1fr;
 </div>
 </section>
 
-<section class="banking-section">
-<span class="section-tag">Agency Banking</span>
-<h2>Our <span>Banking</span> Partners</h2>
-<p class="sub">Trusted financial institutions we work with to serve you better</p>
-<div class="bank-slider">
-<div class="bank-track">
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1670-41de9916/equity-bank-logo.webp" alt="Equity Bank"><span>Equity Bank</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1672-5d8fee53/dfcu-logo.webp" alt="DFCU Bank"><span>DFCU Bank</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1679-8cf46063/ABSA_Group_Limited_Logo.svg.webp" alt="Absa Bank"><span>Absa Bank</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1668-97e69598/ug-sbu-logo.webp" alt="Stanbic Bank"><span>Stanbic Bank</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1681-44491608/KBC%20bank.webp" alt="KBC Bank"><span>KBC Bank</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1683-89bf1df1/housing%20fnc.webp" alt="Housing Finance Bank"><span>Housing Finance</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1674-718850ad/centenary-bank-logo.png" alt="Centenary Bank"><span>Centenary Bank</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1685-b9c6d340/Post%20bank.webp" alt="Post Bank"><span>Post Bank</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1687-17eac430/bank%20of%20africa.webp" alt="Bank Of Africa"><span>Bank of Africa</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1690-1c77bb05/uba1.jfif" alt="UBA"><span>UBA</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1678-935d0dae/EB%20exim%20bank.webp" alt="EB EXIM Bank"><span>EB Exim Bank</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1692-5f99a461/finance%20trust%20bank.png" alt="Finance Trust Bank"><span>Finance Trust</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1694-969a4efb/standard%20chartered.webp" alt="Standard Chartered"><span>Standard Chartered</span></div>
-<div class="bank-card"><img src="https://address-restaurant2.odoo.com/web/image/1696-0884c82d/diamond-trust-bank-dtb-uganda-logo-png_seeklogo-550579.png" alt="Diamond Trust Bank"><span>Diamond Trust</span></div>
-</div>
-</div>
-</section>
-
 <section class="why-section">
 <span class="section-tag">Why Habib Smart</span>
 <h2>Why <span>Choose</span> Us?</h2>
-<p class="sub">We go beyond selling phones we deliver trust, speed, and convenience</p>
+<p class="sub">Premium phones and accessories with exceptional service and value</p>
 <div class="features">
 
 <div class="feature">
 <div class="icon">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0f8972" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
 </div>
-<h3>Trusted Services</h3>
-<p>Years of reliable experience serving customers with honesty and professionalism.</p>
+<h3>Latest Smartphone Models</h3>
+<p>Access the newest flagship phones from top brands like iPhone, Samsung, Tecno, Infinix and Itel.</p>
 </div>
 
 <div class="feature">
 <div class="icon">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d21f1f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
 </div>
-<h3>Fast Transactions</h3>
-<p>Quick processing on all purchases and agency banking no long queues.</p>
+<h3>Quality Accessories</h3>
+<p>Complete range of chargers, cables, cases, covers, and audio accessories for all devices.</p>
 </div>
 
 <div class="feature">
 <div class="icon">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0f8972" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
 </div>
-<h3>Secure Payments</h3>
-<p>Your money and data are always safe with our secure payment systems.</p>
+<h3>Competitive Prices</h3>
+<p>Best deals on premium phones and genuine accessories with affordable payment options.</p>
 </div>
 
 <div class="feature">
@@ -1356,7 +1341,7 @@ grid-template-columns:1fr;
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d21f1f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
 </div>
 <h3>Convenient Location</h3>
-<p>Easily located in Fort Portal walk in anytime and get served fast.</p>
+<p>Easily located in Kampala, Uganda. Visit us anytime and get served fast.</p>
 </div>
 
 </div>
@@ -1392,7 +1377,7 @@ grid-template-columns:1fr;
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d21f1f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
 </div>
 <h3>Visit Us</h3>
-<p>Fort Portal, Uganda</p>
+<p>Kampala, Uganda</p>
 <p style="margin-top:6px;font-size:0.8rem">Come in & get served in person</p>
 </div>
 
@@ -1410,7 +1395,7 @@ Chat on WhatsApp
 
 <div class="footer-brand">
 <img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" alt="Guma Smart Logo">
-<p>Your trusted destination for premium smartphones, accessories, and agency banking in Fort Portal, Uganda.</p>
+<p>Your trusted destination for premium smartphones and accessories in Kampala, Uganda.</p>
 <div class="footer-socials">
 <a href="https://wa.me/256706721334" target="_blank">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -1441,7 +1426,6 @@ Chat on WhatsApp
 <li><a href="#">Chargers & Cables</a></li>
 <li><a href="#">Audio</a></li>
 <li><a href="#">Cases & Covers</a></li>
-<li><a href="#">Agency Banking</a></li>
 </ul>
 </div>
 
@@ -1449,7 +1433,7 @@ Chat on WhatsApp
 <h4>Contact</h4>
 <div class="footer-contact-item">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f8972" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-<span>Fort Portal, Uganda</span>
+<span>Kampala, Uganda</span>
 </div>
 <div class="footer-contact-item">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f8972" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1469,7 +1453,7 @@ Chat on WhatsApp
 
 <div class="footer-bottom">
 <p>2026 Habib Smart Phone Enterprise. All rights reserved.</p>
-<p>Located <span></span> in Fort Portal, Uganda</p>
+<p>Located <span></span> in Kampala, Uganda</p>
 </div>
 
 </footer>
@@ -1601,7 +1585,7 @@ function renderCart() {
     '*ORDER RECEIPT*\n' +
     '\n' +
     '*Guma Smart Phone Enterprise*\n' +
-    'Fort Portal, Uganda\n' +
+    'Kampala, Uganda\n' +
     '\n' +
     ' Date: ' + date + '\n' +
     ' Ref: ' + ref + '\n' +
@@ -1643,7 +1627,7 @@ function sendReceiptEmail() {
     <div style="background:linear-gradient(135deg,#0a7a62,#0f8972);border-radius:16px 16px 0 0;padding:32px;text-align:center">
       <img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" style="height:60px;object-fit:contain;margin-bottom:12px" alt="Guma Smart">
       <h1 style="color:white;font-size:22px;font-weight:800;margin:0">Order Receipt</h1>
-      <p style="color:rgba(255,255,255,0.75);font-size:13px;margin:6px 0 0">Guma Smart Phone Enterprise &bull; Fort Portal, Uganda</p>
+      <p style="color:rgba(255,255,255,0.75);font-size:13px;margin:6px 0 0">Guma Smart Phone Enterprise &bull; Kampala, Uganda</p>
     </div>
     <div style="background:white;padding:28px;border-left:1px solid #e8e8e8;border-right:1px solid #e8e8e8">
       <table style="width:100%;margin-bottom:20px">
@@ -1676,7 +1660,7 @@ function sendReceiptEmail() {
       <p style="text-align:center;color:#aaa;font-size:12px;margin-top:20px">Thank you for choosing Guma Smart Phone Enterprise!</p>
     </div>
     <div style="background:linear-gradient(135deg,#0a7a62,#0f8972);border-radius:0 0 16px 16px;padding:20px;text-align:center">
-      <p style="color:rgba(255,255,255,0.7);font-size:12px;margin:0">+256 706 721334 &bull; Fort Portal, Uganda &bull; Mon-Sat 8am-8pm</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:12px;margin:0">+256 706 721334 &bull; Kampala, Uganda &bull; Mon-Sat 8am-8pm</p>
     </div>
   </div>`;
 
