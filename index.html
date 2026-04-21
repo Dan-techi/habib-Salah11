@@ -1535,8 +1535,8 @@ Chat on WhatsApp
 </div>
 
 <div class="footer-bottom">
-<p>2026 Habib Smart Phone Enterprise. All rights reserved.</p>
-<p>Located <span></span> in Kampala, Uganda</p>
+<p>© 2026 Habib Smart Phone Enterprise. All rights reserved.</p>
+<p>Kampala, Uganda</p>
 </div>
 
 </footer>
@@ -1667,7 +1667,7 @@ function renderCart() {
   const msg = encodeURIComponent(
     '*ORDER RECEIPT*\n' +
     '\n' +
-    '*Guma Smart Phone Enterprise*\n' +
+    '*Habib Smart Phone Enterprise*\n' +
     'Kampala, Uganda\n' +
     '\n' +
     ' Date: ' + date + '\n' +
@@ -1710,7 +1710,7 @@ function sendReceiptEmail() {
     <div style="background:linear-gradient(135deg,#0a7a62,#0f8972);border-radius:16px 16px 0 0;padding:32px;text-align:center">
       <img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" style="height:60px;object-fit:contain;margin-bottom:12px" alt="Guma Smart">
       <h1 style="color:white;font-size:22px;font-weight:800;margin:0">Order Receipt</h1>
-      <p style="color:rgba(255,255,255,0.75);font-size:13px;margin:6px 0 0">Guma Smart Phone Enterprise &bull; Kampala, Uganda</p>
+      <p style="color:rgba(255,255,255,0.75);font-size:13px;margin:6px 0 0">Habib Smart Phone Enterprise &bull; Kampala, Uganda</p>
     </div>
     <div style="background:white;padding:28px;border-left:1px solid #e8e8e8;border-right:1px solid #e8e8e8">
       <table style="width:100%;margin-bottom:20px">
@@ -1740,16 +1740,16 @@ function sendReceiptEmail() {
         <span style="font-size:16px;font-weight:800;color:#111">Total Amount</span>
         <span style="font-size:22px;font-weight:900;color:#0f8972">UGX ${total.toLocaleString()}</span>
       </div>
-      <p style="text-align:center;color:#aaa;font-size:12px;margin-top:20px">Thank you for choosing Guma Smart Phone Enterprise!</p>
+      <p style="text-align:center;color:#aaa;font-size:12px;margin-top:20px">Thank you for choosing Habib Smart Phone Enterprise!</p>
     </div>
     <div style="background:linear-gradient(135deg,#0a7a62,#0f8972);border-radius:0 0 16px 16px;padding:20px;text-align:center">
-      <p style="color:rgba(255,255,255,0.7);font-size:12px;margin:0">+256 706 721334 &bull; Kampala, Uganda &bull; Mon-Sat 8am-8pm</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:12px;margin:0">+256 706 721334 &bull; Kampala, Uganda &bull; Mon-Sun 8am-9pm</p>
     </div>
   </div>`;
 
   emailjs.send('service_98q9vwe', 'template_uw5wtda', {
     to_email: 'tumwesigehabib@gmail.com',
-    from_name: 'Guma Smart Phone Enterprise',
+    from_name: 'Habib Smart Phone Enterprise',
     reply_to: 'tumwesigehabib@gmail.com',
     receipt_html: receiptHtml,
     ref: ref,
