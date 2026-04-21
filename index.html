@@ -950,6 +950,28 @@ header .logo{height:44px;flex-shrink:0}
 
 .menu-toggle.active{transform:rotate(90deg)}
 
+.menu-close {
+position: absolute;
+top: 16px;
+right: 16px;
+background: none;
+border: none;
+color: #0f8972;
+font-size: 2.2rem;
+cursor: pointer;
+z-index: 1001;
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: transform 0.2s;
+}
+
+.menu-close:hover{
+transform: scale(1.15);
+}
+
 nav{
 position:fixed;top:0;right:0;width:50%;height:100vh;
 background: white;
@@ -1121,7 +1143,7 @@ grid-template-columns:1fr;
 <header>
 <img src="https://address-restaurant2.odoo.com/web/image/1649-d6d52ad7/gm%20logo.webp" alt="Guma Smart Logo" class="logo">
 <nav>
-<button class="menu-close" onclick="document.querySelector('.menu-toggle').classList.remove('active'); document.querySelector('nav').classList.remove('active');">×</button>
+<button class="menu-close">×</button>
 <a href="index.html">Home</a>
 <a href="iphone.html">iPhone</a>
 <a href="samsung.html">Samsung</a>
